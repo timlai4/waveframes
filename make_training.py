@@ -20,6 +20,6 @@ print(waveform.dtype)
 print(speaker_id)
 test = [x[0] for x in libri if x[3] == 1624]
 print(len(test))
-test = [x for x in test if x.shape[-1] > 200*512+160]
-with open('train1','wb') as f:
+test = [x for x in test if x.shape[-1] >= 512*100 + 8000*16 + 120]
+with open('trainId1624','wb') as f:
     pickle.dump(test, f)
